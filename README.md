@@ -23,7 +23,7 @@ Simple Usage Scenario
 ---------------------
 
 The code snippet below demonstrates a very simple full lifecycle of the application:
-
+```VB.net
     ' create a server and start it:
     Dim WithEvents server As New SocketServer
     server.StartServer()
@@ -47,3 +47,4 @@ The code snippet below demonstrates a very simple full lifecycle of the applicat
     
     ' stop the server
     server.StopServer()
+```
