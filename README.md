@@ -1,7 +1,9 @@
 .NET Sockets
 ============
 
-Client/server chat/packet engine using asynchronous .NET sockets (aka [Event-based Asynchronous Pattern or EAP](http://en.wikipedia.org/wiki/Asynchronous_method_invocation)).
+Client/server chat/packet engine using asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) on top of an IAsyncResult Pattern for the highest possible concurrency and performance.
+
+(aka [Event-based Asynchronous Pattern or EAP]).
 
 ![dotnetsockets](http://files.glassocean.net/github/dotnetsockets.png)
 
@@ -49,6 +51,13 @@ The code snippet below demonstrates a very simple full lifecycle of the applicat
     ' stop the server
     server.StopServer()
 ```
+
+References
+----------
+[1] [Asynchronous method invocation (Wikipedia)](http://en.wikipedia.org/wiki/Asynchronous_method_invocation)
+[2] [Multithreaded Programming with the Event-based Asynchronous Pattern (MSDN)](http://msdn.microsoft.com/en-us/library/hkasytyf.aspx)
+[3] [Simplify Asynchronous Programming with Tasks (MSDN Magazine)](http://msdn.microsoft.com/en-us/magazine/ff959203.aspx)
+[4] [IAsyncResult Interface (MSDN)](http://msdn.microsoft.com/en-us/library/system.iasyncresult.aspx)
 
 History
 -------
