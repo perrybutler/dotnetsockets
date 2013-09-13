@@ -1,7 +1,7 @@
 .NET Sockets
 ============
 
-Client/server chat/packet engine using asynchronous .NET sockets (aka Event-based Asynchronous Pattern or EAP).
+Client/server chat/packet engine using asynchronous .NET sockets (aka [Event-based Asynchronous Pattern or EAP](http://en.wikipedia.org/wiki/Asynchronous_method_invocation)).
 
 Buffers large messages and data transfers by breaking them down into smaller fixed-size packets and reassembling them on the receiving end. Utilizes high performance .NET Framework natives such as TCP Sockets, Asynchronous BeginReceive/EndReceive methods, BinaryFormatter Serialization, Byte-level BlockCopy, etc. This is quite basically an asynchronous version of .NET's pre-included TCP Client which only functions in synchronous blocking mode. One way around traditional blocking sockets is to spawn each socket as a separate process (thread), but this can have limitations on the number of client connections due to the high number of threads the operating system has to switch between unless using the Overlapped I/O technique, which can still be a performance hindrance when compared to an  asynchronous sockets model.
 
