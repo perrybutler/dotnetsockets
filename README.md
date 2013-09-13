@@ -25,37 +25,37 @@ Simple usage scenario
 
 The code snippet below demonstrates a very simple full lifecycle of the application:
 ```VB.net
-    ' create a server and start it:
-    Dim WithEvents server As New SocketServer
-    server.StartServer()
+' create a server and start it:
+Dim WithEvents server As New SocketServer
+server.StartServer()
 
-    ' create a client and connect it to the server:
-    Dim client As New SocketClient("8989", "127.0.0.1")
-    client.ConnectToServer()
-    
-    ' send a message from the client to the server:
-    client.SendMessageToServer("/say Hi server!")
-    
-    ' at this point an event is raised at the server so our
-    ' custom logic checks the message then does something...
-    (...)
-    Case "/say"
-        SendMessageToClient("/say Hi client!", current_client)
-    (...)
-    
-    ' disconnect the client from the server
-    client.DisconnectFromServer()
-    
-    ' stop the server
-    server.StopServer()
+' create a client and connect it to the server:
+Dim client As New SocketClient("8989", "127.0.0.1")
+client.ConnectToServer()
+
+' send a message from the client to the server:
+client.SendMessageToServer("/say Hi server!")
+
+' at this point an event is raised at the server so our
+' custom logic checks the message then does something...
+(...)
+Case "/say"
+    SendMessageToClient("/say Hi client!", current_client)
+(...)
+
+' disconnect the client from the server
+client.DisconnectFromServer()
+
+' stop the server
+server.StopServer()
 ```
 
 Test Scenarios
 --------------
 The following DOS Batch script can be used to launch 10 clients and connect them to the server automatically:
-    ```bat
-    for /l %%i in (0,1,10) do (start AsyncSocketClient.exe -port 8989 -addres 127.0.0.1)
-    ```
+```Batchfile
+for /l %%i in (0,1,10) do (start AsyncSocketClient.exe -port 8989 -addres 127.0.0.1)
+```
     
 References
 ----------
