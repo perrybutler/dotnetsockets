@@ -50,13 +50,17 @@ client.DisconnectFromServer()
 server.StopServer()
 ```
 
-Test Scenarios
---------------
+Test simulations
+----------------
 The following DOS Batch script can be used to launch 10 clients and connect them to the server automatically:
 ```Batchfile
 for /l %%i in (0,1,10) do (start AsyncSocketClient.exe -port 8989 -addres 127.0.0.1)
 ```
-    
+
+Here are 100 clients connected to the server, all running on the localhost:
+
+![dotnetsockets2](http://files.glassocean.net/github/dotnetsockets3.png)
+
 References
 ----------
 [1] [Multithreaded Programming with the Event-based Asynchronous Pattern (MSDN)](http://msdn.microsoft.com/en-us/library/hkasytyf.aspx)  
