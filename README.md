@@ -22,7 +22,7 @@ In the screenshot above, multiple clients connect to and relay messages to the s
 Simple Usage Scenario
 ---------------------
 
-The code snippet above demonstrates a very simple full lifecycle of the application:
+The code snippet below demonstrates a very simple full lifecycle of the application:
 
     ' create a server and start it:
     Dim WithEvents server As New SocketServer
