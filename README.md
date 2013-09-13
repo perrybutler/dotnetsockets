@@ -53,7 +53,7 @@ The code snippet below demonstrates a very simple full lifecycle of the applicat
 Test Scenarios
 --------------
 The following DOS Batch script can be used to launch 10 clients and connect them to the server automatically:
-    ```DOS
+    ```bat
     for /l %%i in (0,1,10) do (start AsyncSocketClient.exe -port 8989 -addres 127.0.0.1)
     ```
     
