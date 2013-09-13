@@ -1,7 +1,7 @@
 .NET Sockets
 ============
 
-Client/server chat/packet engine using asynchronous .NET sockets.
+Client/server chat/packet engine using asynchronous .NET sockets. Buffers large messages and data transfers by breaking them down into smaller fixed-size packets and reassembling them on the receiving end.
 
 This was developed as a sub-component for a personal project (Carcassonne board game in .NET) which I have since decided would be more suited to a website platform.
 
