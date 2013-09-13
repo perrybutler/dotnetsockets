@@ -22,16 +22,28 @@ In the screenshot above, multiple clients connect to and relay messages to the s
 Simple Usage Scenario
 ---------------------
 
-    ' create and start the server:
+The code snippet above demonstrates a very simple full lifecycle of the application:
+
+    ' create a server and start it:
     Dim WithEvents server As New SocketServer
     server.StartServer()
 
-    ' create and connect a client to the server:
-    Dim client As New SocketClient("8989", "127.0.0.1") ' we'll be connecting to the server module running on localhost port 8989
+    ' create a client and connect it to the server:
+    Dim client As New SocketClient("8989", "127.0.0.1")
     client.ConnectToServer()
-    client.SendMessageToServer("/say Hi there!")
+    
+    ' send a message from the client to the server:
+    client.SendMessageToServer("/say Hi server!")
+    
+    ' at this point an event is raised at the server so our
+    ' custom logic checks the message then does something...
+    (...)
+    Case "/say"
+        SendMessageToClient("/say Hi client!", current_client)
+    (...)
+    
+    ' disconnect the client from the server
     client.DisconnectFromServer()
     
+    ' stop the server
     server.StopServer()
-
-The code snippet above demonstrates a very simple full lifecycle of the application: 1) Create a new instance of the SocketServer and start it, 2) Create a new instance of the SocketClient and connect it to the running server, 3) send a message from the client to the server, 4) disconnect the client from the server, 5) stop the server.
