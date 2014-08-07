@@ -70,6 +70,10 @@ References
 [5] [Asynchronous method invocation (Wikipedia)](http://en.wikipedia.org/wiki/Asynchronous_method_invocation)  
 [6] [Get Closer to the Wire with High-Performance Sockets in .NET](http://msdn.microsoft.com/en-us/magazine/cc300760.aspx)
 
+Roadmap / Future Challenges
+---------------------------
+Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
+
 History
 -------
 
