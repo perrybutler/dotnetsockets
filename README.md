@@ -61,6 +61,10 @@ Here are 100 clients connected to the server, all running on the localhost:
 
 ![dotnetsockets2](http://files.glassocean.net/github/dotnetsockets3.png)
 
+Roadmap / Future Challenges
+---------------------------
+Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
+
 References
 ----------
 [1] [Multithreaded Programming with the Event-based Asynchronous Pattern (MSDN)](http://msdn.microsoft.com/en-us/library/hkasytyf.aspx)  
@@ -69,10 +73,6 @@ References
 [4] [IAsyncResult Interface (MSDN)](http://msdn.microsoft.com/en-us/library/system.iasyncresult.aspx)  
 [5] [Asynchronous method invocation (Wikipedia)](http://en.wikipedia.org/wiki/Asynchronous_method_invocation)  
 [6] [Get Closer to the Wire with High-Performance Sockets in .NET](http://msdn.microsoft.com/en-us/magazine/cc300760.aspx)
-
-Roadmap / Future Challenges
----------------------------
-Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
 
 History
 -------
