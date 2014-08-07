@@ -1,7 +1,7 @@
 .NET Sockets
 ============
 
-Client/server chat/packet engine using asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) [[1]](#references) on top of an IAsyncResult Pattern [[2]](#references) for the highest possible concurrency and performance [[2]](#references) [[3]](#references).
+Client/server chat/packet engine using asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) [[1]](#references) on top of an IAsyncResult Pattern [[2]](#references) for the *maximum concurrency, capacity, performance and scalability* [[2]](#references) [[3]](#references) [[6]](#references).
 
 ![dotnetsockets](http://files.glassocean.net/github/dotnetsockets.png)
 
