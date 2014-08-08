@@ -3,7 +3,7 @@
 
 Client/server chat/packet engine using asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) [[1]](#references) on top of an IAsyncResult Pattern [[2]](#references) with thread pools (I/O completion ports) for *maximum concurrency, capacity, performance and scalability* [[2]](#references) [[3]](#references) [[6]](#references).
 
-Developed in my heyday of hobby developments, perhaps before Protobuf (Google) and Thrift (Facebook) were a thing, this project was aiming to achieve something similar for game development.
+Built in my heyday of hobby game programming, perhaps before Protobuf (Google) and Thrift (Facebook) were a thing, this project was aiming to achieve something similar - as a universal networking framework for game development.
 
 ![dotnetsockets](http://files.glassocean.net/github/dotnetsockets.png)
 
