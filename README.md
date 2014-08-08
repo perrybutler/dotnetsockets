@@ -3,6 +3,8 @@
 
 Client/server chat/packet engine using asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) [[1]](#references) on top of an IAsyncResult Pattern [[2]](#references) with thread pools (I/O completion ports) for *maximum concurrency, capacity, performance and scalability* [[2]](#references) [[3]](#references) [[6]](#references).
 
+Developed in my heyday of hobby developments, perhaps before Protobuf (Google) and Thrift (Facebook) were a thing, this project was aiming to achieve something similar for game development.
+
 ![dotnetsockets](http://files.glassocean.net/github/dotnetsockets.png)
 
 In the screenshot above, multiple clients connect to and relay messages to the server, which may then relay other messages back to the client depending on the message recieved. I do realize the above screenshot shows a broken chat system because the clients cannot see eachother's messages, so I'll update this soon to show how custom packets can be designed and handled by the server/clients.
