@@ -67,7 +67,8 @@ Here are 100 clients connected to the server, all running on the localhost:
 
 Roadmap / Future Challenges
 ---------------------------
-Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
+* Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
+* Experiment with connecting to the server via HTML5 WebSockets.
 
 References
 ----------
