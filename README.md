@@ -1,7 +1,7 @@
 .NET Sockets
 ============
 
-Client/server communication system utilizing asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) on top of an IAsyncResult Pattern with thread pools (I/O completion ports) and a binary RPC framework at the core for *maximum concurrency, capacity, performance and scalability*.
+Client/server communication system utilizing asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) on top of an IAsyncResult Pattern with thread pools (I/O completion ports) and a binary packet-based TCP communications for maximum concurrency, capacity, performance and scalability.
 
 Built in the heyday of hobby game programming, perhaps before Protobuf (Google) and Thrift (Facebook) were a thing, this project was aiming to achieve something similar - as a universal networking framework for game development.
 
