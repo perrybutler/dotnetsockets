@@ -77,7 +77,26 @@ However, once the number of client connections exceeds 16,000, we start noticing
 
 As it turns out, it was the string concatenation in the server's UI thread that caused the exponential performance drop. That should have been obvious sooner.
 
-It also looks like the 16,000 figure is exactly the number of connections my test machine can handle before it completely bombs out, where even websites won't load! Closing a few clients releases a few connections, and websites can load again.
+It also looks like the 16,000 figure is exactly the number of connections my test machine can handle before it completely bombs out, where even websites won't load! Closing a few clients releases a few connections, and websites can load again. Here are some test results:
+
+    Simulating 1000 client connections over 16 iterations...
+    1) 485.0278 ms
+    2) 452.0259 ms
+    3) 495.0283 ms
+    4) 476.0272 ms
+    5) 472.027 ms
+    6) 477.0273 ms
+    7) 522.0299 ms
+    8) 516.0295 ms
+    9) 457.0261 ms
+    10) 506.029 ms
+    11) 474.0271 ms
+    12) 496.0283 ms
+    13) 545.0312 ms
+    14) 516.0295 ms
+    15) 517.0296 ms
+    16) 540.0309 ms
+    All iterations complete. Total duration: 7949.4547 ms
 
 Stay tuned...
 
