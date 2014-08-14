@@ -65,11 +65,17 @@ Here are 100 clients connected to the server, all running on the localhost:
 
 ![dotnetsockets2](http://files.glassocean.net/github/dotnetsockets3.png)
 
-Upon further review, it appears the SendMessageToClient function, or the callback in the UI thread, isn't optimized properly. When this portion of the connection logic is ommitted, we can clearly see that the server is able to handle over 10,000 connections without a hiccup:
+Upon further review and testing, it appears the SendMessageToClient function, or the callback in the UI thread, isn't optimized properly. A Stress Test has now been built into the client app which creates 100 or 1000 sockets and connects them to the server immediately (no sleep), simulating a massive influx of clients. This heavy load experiment piqued my interest, so I had a look into the SendMessageToClient function to see if it could be optimized. It appears that in the callback, we are updating a listbox and textbox on the server's UI thread. Avoiding these two updates causes the server to perform much better, and that's fine because we can omit the Forms-based UI and simply write strings to the console, as most servers do.
+
+We can clearly see that the server is able to handle over 10,000 connections without a hiccup:
 
 ![dotnetsockets3](http://files.glassocean.net/software development/dotnetsockets/over-9000.jpg)
 
-This heavy load experiment has piqued my interest, so I'll be looking into the SendMessageToClient function. Stay tuned...
+However, once the number of client connections exceeds 16,000, we start noticing issues again:
+
+![dotnetsockets4](http://files.glassocean.net/software development/dotnetsockets/over-16000.jpg)
+
+Stay tuned...
 
 Roadmap / Future Challenges
 ---------------------------
