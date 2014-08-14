@@ -98,6 +98,12 @@ It also looks like the 16,000 figure is exactly the number of connections my tes
     16) 540.0309 ms
     All iterations complete. Total duration: 7949.4547 ms
 
+New test results are in! The server can now push a host system to the port limit without bogging down. Here's over 64,000 clients connected:
+
+![dotnetsockets5](http://files.glassocean.net/software development/dotnetsockets/over-64000.jpg)
+
+The time it took the client (stress test) and the server to connect that many clients was 81 seconds, with the server process consuming just 238 MB of RAM. Next I'd like to test broadcasting messages to multiple clients and observe the performance/latency. I'd also like to do some real-world simulations (DoS) by running the stress test over the internet.
+
 Stay tuned...
 
 Roadmap / Future Challenges
