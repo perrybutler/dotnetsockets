@@ -75,6 +75,10 @@ However, once the number of client connections exceeds 16,000, we start noticing
 
 ![dotnetsockets4](http://files.glassocean.net/software development/dotnetsockets/over-16000.jpg)
 
+As it turns out, it was the string concatenation in the server's UI thread that caused the exponential performance drop. That should have been obvious sooner.
+
+It also looks like the 16,000 figure is exactly the number of connections my test machine can handle before it completely bombs out, where even websites won't load! Closing a few clients releases a few connections, and websites can load again.
+
 Stay tuned...
 
 Roadmap / Future Challenges
