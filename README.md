@@ -65,6 +65,12 @@ Here are 100 clients connected to the server, all running on the localhost:
 
 ![dotnetsockets2](http://files.glassocean.net/github/dotnetsockets3.png)
 
+Upon further review, it appears the SendMessageToClient function, or the callback in the UI thread, isn't optimized properly. When this portion of the connection logic is ommitted, we can clearly see that the server is able to handle over 10,000 connections without a hiccup:
+
+![dotnetsockets3](http://files.glassocean.net/software development/dotnetsockets/over-9000.jpg)
+
+This heavy load experiment has piqued my interest, so I'll be looking into the SendMessageToClient function. Stay tuned...
+
 Roadmap / Future Challenges
 ---------------------------
 * Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
