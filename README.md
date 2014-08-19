@@ -111,6 +111,7 @@ Roadmap / Future Challenges
 * Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
 * Implement a RESTful HTTP web server component.
 * Experiment with connecting to the server via HTML5 WebSockets.
+* Update the APM (Asynchronous Programming Model) + EAP (Event-based Asynchronous Pattern) to AAP (Async/Await Pattern) or TAP (Task-based Asynchronous Pattern) to reduce complexity and code readability, both of which are available in .NET framework 4.5.
 
 References
 ----------
