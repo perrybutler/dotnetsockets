@@ -54,64 +54,32 @@ client.DisconnectFromServer()
 server.StopServer()
 ```
 
-Test simulations
+Benchmarks
 ----------------
-The following DOS Batch script can be used to launch 10 clients and connect them to the server automatically:
-```Batchfile
-for /l %%i in (0,1,10) do (start AsyncSocketClient.exe -port 8989 -address 127.0.0.1)
-```
 
-Here are 100 clients connected to the server, all running on the localhost:
+The server can handle connections up to the OS port limit:
 
-![dotnetsockets2](http://files.glassocean.net/github/dotnetsockets3.png)
+![64000clients](http://glassocean.net/media/64000-clients.jpg)
 
-Upon further review and testing, it appears the SendMessageToClient function, or the callback in the UI thread, isn't optimized properly. A Stress Test has now been built into the client app which creates 100 or 1000 sockets and connects them to the server immediately (no sleep), simulating a massive influx of clients. This heavy load experiment piqued my interest, so I had a look into the SendMessageToClient function to see if it could be optimized. It appears that in the callback, we are updating a listbox and textbox on the server's UI thread. Avoiding these two updates causes the server to perform much better, and that's fine because we can omit the Forms-based UI and simply write strings to the console, as most servers do.
+It can handle a high number of requests without failure:
 
-We can clearly see that the server is able to handle over 10,000 connections without a hiccup:
+![4000rps](http://glassocean.net/media/requests-per-second.jpg)
 
-![dotnetsockets3](http://files.glassocean.net/software development/dotnetsockets/over-9000.jpg)
+The client app has a stress test built in, but I mostly use ApacheBench, siege and WeigHTTP for comparing results with other servers now. Benchmarks and optimizations will be an ongoing process, so rather than spamming this readme with these results, they will be posted to my website, along with insight into the optimizations being performed.
 
-However, once the number of client connections exceeds 16,000, we start noticing issues again:
-
-![dotnetsockets4](http://files.glassocean.net/software development/dotnetsockets/over-16000.jpg)
-
-As it turns out, it was the string concatenation in the server's UI thread that caused the exponential performance drop. That should have been obvious sooner.
-
-It also looks like the 16,000 figure is exactly the number of connections my test machine can handle before it completely bombs out, where even websites won't load! Closing a few clients releases a few connections, and websites can load again. Here are some test results:
-
-    Simulating 1000 client connections over 16 iterations...
-    1) 485.0278 ms
-    2) 452.0259 ms
-    3) 495.0283 ms
-    4) 476.0272 ms
-    5) 472.027 ms
-    6) 477.0273 ms
-    7) 522.0299 ms
-    8) 516.0295 ms
-    9) 457.0261 ms
-    10) 506.029 ms
-    11) 474.0271 ms
-    12) 496.0283 ms
-    13) 545.0312 ms
-    14) 516.0295 ms
-    15) 517.0296 ms
-    16) 540.0309 ms
-    All iterations complete. Total duration: 7949.4547 ms
-
-New test results are in! The server can now push a host system to the port limit without bogging down. Here's over 64,000 clients connected:
-
-![dotnetsockets5](http://files.glassocean.net/software development/dotnetsockets/over-64000.jpg)
-
-The time it took the client (stress test) and the server to connect that many clients was 81 seconds, with the server process consuming just 238 MB of RAM. Next I'd like to test broadcasting messages to multiple clients and observe the performance/latency. I'd also like to do some real-world simulations (DoS) by running the stress test over the internet.
-
-Stay tuned...
+Benchmarks:
+* [.NET Sockets - Preliminary Benchmarks](http://glassocean.net/dotnetsockets-preliminary-benchmarks/)
+* [Benchmarking Node.js, Apache and .NET Sockets](http://glassocean.net/benchmarking-node-js-apache-and-net-sockets/)
 
 Roadmap / Future Challenges
 ---------------------------
 * Implement the publish/subscribe pattern for supporting multiple/individual channels of communication.
 * Implement a RESTful HTTP web server component.
 * Experiment with connecting to the server via HTML5 WebSockets.
-* Update the APM (Asynchronous Programming Model) + EAP (Event-based Asynchronous Pattern) to AAP (Async/Await Pattern) or TAP (Task-based Asynchronous Pattern) to reduce complexity and code readability, both of which are available in .NET framework 4.5.
+* Update the APM (Asynchronous Programming Model) + EAP (Event-based Asynchronous Pattern) to TAP (Task-based Asynchronous Pattern) which is available in .NET framework 4.0.
+* Optimize the concurrency issue surrounding large numbers of concurrent processes such as starting up 1000 instances of php-cgi.exe.
+* Do more benchmarks with real content and compare to other servers such as IIS, nginx, vert.x.
+* Look into IIS Hostable Web Core.
 
 References
 ----------
