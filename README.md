@@ -80,6 +80,7 @@ Roadmap / Future Challenges
 * Optimize the concurrency issue surrounding large numbers of concurrent processes such as starting up 1000 instances of php-cgi.exe.
 * Do more benchmarks with real content and compare to other servers such as IIS, nginx, vert.x.
 * Look into IIS Hostable Web Core.
+* Flesh out the binary protocol and HTTP protocol into modular first-class citizens that can be used together or separately.
 
 References
 ----------
