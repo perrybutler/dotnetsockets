@@ -77,7 +77,7 @@ Roadmap / Future Challenges
 * Implement a RESTful HTTP web server component.
 * Experiment with connecting to the server via HTML5 WebSockets.
 * Update the APM (Asynchronous Programming Model) + EAP (Event-based Asynchronous Pattern) to TAP (Task-based Asynchronous Pattern) which is available in .NET framework 4.0.
-* Optimize the concurrency issue surrounding large numbers of concurrent processes such as starting up 1000 instances of php-cgi.exe.
+* Optimize the concurrency issue surrounding large numbers of concurrent processes such as starting up 1000 instances of php-cgi.exe. Turns out I've been using it incorrectly (as CGI instead of FastCGI).
 * Do more benchmarks with real content and compare to other servers such as IIS, nginx, vert.x.
 * Look into IIS Hostable Web Core.
 * Flesh out the binary protocol and HTTP protocol into modular first-class citizens that can be used together or separately.
