@@ -20,7 +20,7 @@ One way around traditional blocking sockets is to spawn each socket as a separat
 
 ![dotnetsockets2](http://files.glassocean.net/github/dotnetsockets2.jpg)
 
-Using OOP principles, the idea is to offer a base packet object which can be inherited, allowing for custom packets that encapsulate any data structure using serialization, sending those packets to the server, and having the server respond by doing something or sending a message/command back to one or more clients. This allows the server to be the final authoritative voice, rather than clients communicating directly which would allow for a greater possibility of cheating. This type of networking architecture is used in Valve's [Source Engine](https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking) (Half-Life 2).
+Using OOP principles, the idea is to offer a base packet object which can be inherited or overridden, allowing for custom packets that encapsulate any data structure using binary serialization, sending those packets to the server, and having the server parse the packets into their native structures, allowing OOP access to the data on both sides. The server can then respond by doing something or sending a message/command back to one or more clients. This allows the server to be the final authoritative voice, rather than clients communicating directly (ad-hoc) which would allow for a greater possibility of cheating. This type of multiplayer game networking architecture ("netcode") is used in Valve's [Source Engine](https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking) (Half-Life 2) and many others.
 
 May be useful as a learning tool or starting point for multiplayer video game programming in Windows.
 
