@@ -1,6 +1,8 @@
 .NET Sockets
 ============
 
+***Note: this project has been re-tooled into an HTTP web server called [Rapid Server](https://github.com/perrybutler/rapid-server) which will eventually incorporate the binary protocol found here. Consider this project obsolete.***
+
 Client/server communication system utilizing asynchronous .NET sockets via an Event-based Asynchronous Pattern (EAP) on top of an IAsyncResult Pattern with thread pools (I/O completion ports) and a binary packet-based TCP communications for maximum concurrency, capacity, performance and scalability.
 
 Built in the heyday of hobby game programming, perhaps before Protobuf (Google) and Thrift (Facebook) were a thing, this project was aiming to achieve something similar - as a universal networking framework for game development.
